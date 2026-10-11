@@ -1,1 +1,374 @@
+package newdemo;
+
+public class ClassDemo {
+//	class=> data and methods
+	
+//	data or attributes
+	int rollno=101;
+	String name="Ranjith";
+	
+	
+//	method or function
+	void display() {
+		System.out.println("Roll no:"+rollno);
+		System.out.println("Name: "+name);
+	}
+	
+	
+	public static void main(String[]args) {
+		
+//		object creation
+		ClassDemo cd=new ClassDemo();
+		
+		System.out.println("Roll no:"+cd.rollno);
+		
+		
+		cd.display();
+		
+//		ClassDemo cd1=new ClassDemo();
+
+		
+		
+		
+	}
+	
+
+}
+
+package newdemo;
+//Constructor Overloading
+public class Car {
+	
+	
+//	Constructor 
+	Car(){
+		System.out.println("Default constructor..");
+	}
+	
+	
+	Car(int a, int b){
+		
+		int c=a*b;
+		System.out.println("Product:"+c);
+ 
+	
+	
+	}
+	
+	
+	Car(int x,float d){
+		float y=(float)x+d;
+		
+		System.out.println("Sum:"+y);
+		
+	}
+	
+	Car(String name,long price){
+		System.out.println("Car BrandName: "+name);
+		System.out.println("Car Price: "+price);
+	}
+
+	public static void main(String[] args) {
+		
+//		Constructor overloading - Same name but different signature of parameter
+		
+		
+		Car c=new Car();
+		
+		Car c1=new Car(10,20);
+		
+		Car c2=new Car(5,10.3f);
+		
+		Car c3=new Car("Rolls Royce",10000000L);
+ 
+		
+	}
+
+}
+
+package newdemo;package newdemo;
+
+public class Demo3 {
+	
+//	Class contain: methods and attributes
+	
+	
+//	attributes
+	
+	int id=10;
+	int regno=20;
+	String name="Karthick";
+	
+//	method
+	
+	public void show() {
+		System.out.println("Name: "+name);
+		System.out.println("Id Number: "+id);
+		System.out.println("Regno:"+regno);
+	}
+
+	public static void main(String[] args) {
+		
+//		main method - starting point of program executing
+		
+//		object creation
+		
+		Demo3 d3=new Demo3();
+		
+//		can create multiple reference(d3,d4...) for single object
+		Demo3 d4=new Demo3();
+		
+		d4.show();
+		d3.show();
+	    System.out.println(d3.name);
+ 
+	}
+
+}
+
+
+public class Demo3 {
+	
+//	Class contain: methods and attributes
+	
+	
+//	attributes
+	
+	int id=10;
+	int regno=20;
+	String name="Karthick";
+	
+//	method
+	
+	public void show() {
+		System.out.println("Name: "+name);
+		System.out.println("Id Number: "+id);
+		System.out.println("Regno:"+regno);
+	}
+
+	public static void main(String[] args) {
+		
+//		main method - starting point of program executing
+		
+//		object creation
+		
+		Demo3 d3=new Demo3();
+		
+//		can create multiple reference(d3,d4...) for single object
+		Demo3 d4=new Demo3();
+		
+		d4.show();
+		d3.show();
+	    System.out.println(d3.name);
+ 
+	}
+
+}
+
+package newdemo;
+
+public class Demo4 {
+	
+	
+//	attributes
+	int id;
+	String name;
+	String city;
+	long pincode;
+	
+	
+	/*
+	Demo4(){
+		
+		id=101;
+		name="Megavarnan";
+		city="Salem";
+		pincode=636178L;
+		System.out.println("Constructor is created...");
+		
+		System.out.println("Id: "+id);
+		System.out.println("Name: "+name);
+		System.out.println("City: "+city);
+		System.out.println("Pincode: "+pincode);
+	}
+
+	*/
+	
+//	Parameterized Constructor
+      Demo4(int id,String name,String city,Long pincode){
+
+    	  
+    	  System.out.println("Constructor is created...");
+		
+		System.out.println("Id: "+id);
+		System.out.println("Name: "+name);
+		System.out.println("City: "+city);
+		System.out.println("Pincode: "+pincode);
+	}
+	
+	
+	
+	/*
+	void display() {
+		id=101;
+		name="Megavarnan";
+		city="Salem";
+		pincode=636178L;
+		System.out.println("Constructor is created...");
+		
+		System.out.println("Id: "+id);
+		System.out.println("Name: "+name);
+		System.out.println("City: "+city);
+		System.out.println("Pincode: "+pincode);
+		
+	}
+	*/
+	
+	
+	
+	public static void main(String[] args) {
+ 
+//		object creation
+		Demo4 d4=new Demo4(101,"Ranjith","Salem",643543L);
+//		d4.display();
+	
+		
+		
+		
+	}
+
+}
+package newdemo;
+
+//Multi level Inheritance=> grandparent->parent ->child
+class Grandparent{
+	int idno=100;
+	void disp() {
+		System.out.println("Grandparent method is created..");
+	}
+}
+
+class Parent extends Grandparent{
+	
+	int rollno=102;
+	String name="Raj";
+	
+	public void show() {
+		System.out.println("Parent Class method is created..");
+		
+		System.out.println("Id no of Grandparent be:"+super.idno);
+		System.out.println("Roll no of parent be: "+rollno);
+	}
+	
+}
+
+class Child extends Parent{
+	 public void show() {
+		 String name="Riya";
+		System.out.println("Child class method is created");
+		System.out.println("Name of child be:"+super.name);
+		System.out.println("Name of current child be:"+name);
+		super.show();
+	}
+	
+	 
+}
+
+
+public class Inherit {
+	
+		public static void main(String[] args) {
+		
+//		object
+		
+//			Parent pr=new Parent();
+//			pr.show();
+//			pr.disp();
+			
+		Child c=new Child();
+		c.show();
+		c.disp();
+ 		
+	}
+
+}
+
+package newdemo;
+
+//Method Overriding
+class Parent1{
+	int money=20000;
+	void expenses() {
+		System.out.println("Parent Expenses be "+money);
+
+	}
+}
+
+class Child1 extends Parent1{
+  	void expenses(int cost) {
+ 		System.out.println("Child expenses be "+cost);
+ 		
+ 		System.out.println("Parent expenses details:");
+ 		super.expenses();
+ 	}
+ 
+}
+
+public class PolyDemo {
+
+	public static void main(String[] args) {
+ 
+//		method overriding or Run time polymorphism
+		Parent1 c=new Child1();
+//		c.expenses(30000);
+		
+		c.expenses();
+		
+	}
+package newdemo;
+
+//method overloading or compile time polymorphism
+class Animal{
+	
+	String animal="Lion";
+	void roar() {
+		System.out.println("Lion is roaring over the jungle");
+	}
+	
+}
+
+class Lioness extends Animal{
+	void roar(String lioness) {
+		System.out.println("Lioness name is "+lioness);
+	}
+}
+
+//class Elephant extends Animal{
+//	String name="Elephant";
+//	void sound() {
+//		super.roar();
+//		System.out.println("Elephant is playing..");
+//	}
+//	
+	
+//}
+
+
+public class PolyMorphDemo {
+
+	public static void main(String[] args) {
+  
+//		Elephant e=new Elephant();
+//		e.sound();
+		
+		Lioness l=new Lioness();
+		l.roar("Isabelle");  //Lioness class method
+		l.roar();//Animal class method
+//		But signature of parameter is different for both class methods
+		
+	}
+
+}
+
+}
 
